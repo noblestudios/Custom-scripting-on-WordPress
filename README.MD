@@ -4,7 +4,7 @@ Wait, what's custom scripting? Suppose you have 30k posts in your WordPress data
 
 
 ## WP-CLI eval-file
-WP-CLI has a beautiful feature tucked away in it's documentation page called eval-file. The eval-file command lets you run PHP after WordPress has loaded. This lets you write scripts within the WordPress ecosystem. Writing scripts within the WordPress ecosystem helps you utilize all plugins and custom libraries available.
+WP-CLI has a beautiful feature tucked away in it's documentation page called eval-file. The eval-file command lets you run PHP after WordPress has loaded. This lets you write scripts within the WordPress ecosystem. Writing scripts within WordPress helps you utilize all plugins and custom libraries available. 
 
 
 ### The Basics
