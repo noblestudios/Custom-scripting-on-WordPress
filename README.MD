@@ -4,7 +4,7 @@ Wait, what's custom scripting? Suppose you have 30k posts in your WordPress data
 
 
 ## WP-CLI eval-file
-WP-CLI has a beautiful feature tucked away in it's documentation page called eval-file. The eval-file command lets you run PHP after WordPress has loaded. This lets you write scripts within the WordPress ecosystem. Writing scripts withint he WordPress ecosystem helps you utilize all plugins and custom libraries available.
+WP-CLI has a beautiful feature tucked away in it's documentation page called eval-file. The eval-file command lets you run PHP after WordPress has loaded. This lets you write scripts within the WordPress ecosystem. Writing scripts within WordPress helps you utilize all plugins and custom libraries available.
 
 
 ### The Basics
@@ -18,16 +18,29 @@ This is how you execute a script.
 ~/projects/scripting » wp eval-file wp-content/themes/%themename%/scripts/find-duplicates.php
 ```
 
+You can pass command line arguments to your scripts.
+```console
+~/projects/scripting » wp eval-file wp-content/themes/%themename%/scripts/find-duplicates.php my-argument
+```
+
+The arguments are available in an array for use in PHP
+
+```php
+if (isset($args) && !empty($args)) {
+    echo $args[0]; // contains "my-argument"
+}
+```
+
 
 ## Hey, that's neat. Do you have any examples?
 
 This repo will house a collection of scripts to do arbitrary things. Many of them will NOT have extensive error checking because these scripts are generally a one-and-done processes.
 
 
-##### find-duplicates.php
+1. **find-duplicates.php** - Chugs through a post type named "stakeholder" and finds the ones which are titled the same and generates a CSV of the dupes.
 
-Chugs through a post type named "stakeholder" and finds the ones which are titled the same and generates a CSV of the dupes.
-
+2. **import-posts.php** - @TODO
+3. **duplicate-stakeholders.php** - Given a WPML site, chugs through a language and creates duplicates for all available languages.
 
 ## Resources
 
